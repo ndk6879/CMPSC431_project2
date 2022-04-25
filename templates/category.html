@@ -1,0 +1,18 @@
+{{alist|length}}<br><br>
+{% for k,v in alist.items %}
+  <a href = "{% url 'product_detail' k %}">{{k}}</a>: {{v}}<br><br>
+{% endfor %}
+
+<!-- {% for i,v in cache.items %}
+  <li>{{i}}</li>
+  {% for vv in v%}
+       <li style="padding-left:15px;">{{vv}}</li>
+  {% endfor %}
+  <br><br>
+{% endfor %}
+<!-- {% for i,v in cache.items %}
+  {{i}}: {{v}}<br><br>
+  {% for value in values%}
+    {{value}}<br>
+  {% endfor %}
+{% endfor %} -->

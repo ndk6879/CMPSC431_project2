@@ -1,0 +1,18 @@
+{% for product in products %}
+  {{product.seller_email}}<br>
+  {{product.listing_id}}<br>
+  {{product.category}}<br>
+  {{product.title}}<br>
+  {{product.product_name}}<br>
+  {{product.product_description}}<br>
+  {{product.price}}<br>
+  {% for seller in sellers%}
+    {% if product.seller_email == seller.email %}
+      seller's email: {{seller.email}}<br>
+      seller's routing_number: {{seller.routing_number}}<br>
+      seller's account_number: {{seller.account_number}}<br>
+      seller's balance: {{seller.balance}}<br>
+    {% endif %}
+  {% endfor %}
+  {{product.quantity}}<br><br><br>
+{% endfor %}

@@ -1,0 +1,28 @@
+{% if buyers %}
+    <ul>
+      {% for buyer in buyers %}
+        {% for creditcard in creditcards %}
+          {% if creditcard.owner_email == buyer.email %}
+            <h2 style = 'padding=0;'>{{ buyer.first_name }}'s Info</h2>
+            <li>Name: {{ buyer.first_name }} {{ buyer.last_name }}</li>
+            <li>Age: {{ buyer.age }}</li>
+            <li>Gender: {{ buyer.gender }}</li>
+            <li>Home Address: {{ buyer.home_address_id }}</li>
+            <li>Billing Address: {{ buyer.billing_address_id }}</li>
+            <li>creditcard: {{ creditcard.credit_card_num }}</li>
+            <li>creditcard: {{ creditcard.credit_card_num|slice:"15:" }}</li>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </ul>
+{% else %}
+    <p>질문이 없습니다.</p>
+{% endif %}
+
+<!-- email = models.CharField(max_length=200)
+  first_name = models.CharField(max_length=200)
+  last_name = models.CharField(max_length=200)
+  gender = models.CharField(max_length=200)
+  age = models.IntegerField()
+  home_address_id = models.CharField(max_length=200)
+  billing_address_id = models.CharField(max_length=200) -->
